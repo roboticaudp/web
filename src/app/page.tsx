@@ -1,16 +1,16 @@
 import { Hero } from "@/components/sections/Hero";
-import { ProjectGrid } from "@/components/sections/ProjectGrid";
-import { DocHubPreview } from "@/components/sections/DocHubPreview";
-import { SocialHub } from "@/components/sections/SocialHub";
+import { Projects } from "@/components/sections/Projects";
+import { Docs } from "@/components/sections/Docs";
+import { Social } from "@/components/sections/Social";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden w-full">
       <Hero />
-      <ProjectGrid />
-      <DocHubPreview />
-      <SocialHub />
+      <Projects />
+      <Docs />
+      <Social />
       <Footer />
     </div>
   );

@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
-import { Avatar } from "@/components/ui/ParticipantStack";
+import { Avatar } from "@/components/ui/Avatar";
 import { LinkedIn } from "@/components/icons/Linkedin";
 
 const BOARD_MEMBERS = [
@@ -17,7 +17,7 @@ const BOARD_MEMBERS = [
   { name: "Diego Martínez", role: "Dir. Hardware", linkedin: "#", uv: { x: -100, y: -100 } }
 ];
 
-export const SocialHub = () => {
+export const Social = () => {
   return (
     <section id="comunidad" className="py-20 px-6 bg-background border-t border-white/5">
       <article className="max-w-7xl mx-auto">

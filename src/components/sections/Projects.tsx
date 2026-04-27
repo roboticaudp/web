@@ -45,7 +45,7 @@ const projects = [
   },
 ];
 
-export const ProjectGrid = () => {
+export const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
   const [headerHeight, setHeaderHeight] = useState(0);

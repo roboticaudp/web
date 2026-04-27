@@ -40,7 +40,7 @@ const DOCUMENTS = [
   }
 ];
 
-export const DocHubPreview = () => {
+export const Docs = () => {
   return (
     <section id="docs" className="py-24 px-6 bg-background relative border-t border-white/5">
       <article className="max-w-7xl mx-auto">

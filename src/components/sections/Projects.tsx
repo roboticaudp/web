@@ -110,26 +110,24 @@ export const Projects = () => {
           <div
             className="relative bg-background py-10 px-4 md:px-6 flex flex-col gap-8"
           >
-            <div
+            <header
               ref={index === 0 ? measureRef : null}
               className="flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
-              <header className="flex items-baseline gap-4 md:gap-8">
+              <div className="flex items-baseline gap-4 md:gap-8">
                 <span className="text-primary font-mono text-xs md:text-sm shrink-0">02.0{index + 1} /</span>
                 <Typography
                   variant="h2"
                 >
                   {project.title}
                 </Typography>
-              </header>
-
-              <div className="flex items-center gap-6 self-end md:self-center">
-                <span className="flex items-center gap-2 border border-white/10 px-3 py-1 rounded-full bg-white/5">
-                  <StatusPing variant={project.status as any} />
-                  <span className="text-[10px] font-mono text-white/60">{project.statusLabel}</span>
-                </span>
               </div>
-            </div>
+
+              <span className="flex items-center gap-2 border border-white/10 px-3 py-1 rounded-full bg-white/5">
+                <StatusPing variant={project.status as any} />
+                <span className="text-[10px] font-mono text-white/60">{project.statusLabel}</span>
+              </span>
+            </header>
 
             <main className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
               <Typography variant="p" className="text-sm max-w-2xl md:text-base text-white/40 leading-relaxed">

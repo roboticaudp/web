@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 export const UDPBadge = ({ className }: { className?: string }) => {
   return (
     <Badge
-      variant="secondary"
+      color="inactive"
+      size="xs"
       className={cn(
-        "inline-flex items-center gap-1.5 px-2 py-0.5 h-6 align-middle bg-white/5 hover:bg-white/10 transition-all duration-300",
+        "inline-flex items-center gap-1.5 h-6 align-middle hover:bg-white/10 transition-all duration-300",
         className
       )}
     >

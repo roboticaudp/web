@@ -91,10 +91,10 @@ export const Projects = () => {
                 </Typography>
               </div>
 
-              <span className="flex items-center gap-2 border border-white/10 px-3 py-1 rounded-full bg-white/5">
-                <StatusPing variant={project.status as any} />
-                <span className="text-[10px] font-mono text-white/60">{project.statusLabel}</span>
-              </span>
+              <Badge color={project.status} size="xs" isMono className="gap-2 py-1">
+                <StatusPing variant={project.status} />
+                {project.statusLabel}
+              </Badge>
             </header>
 
             <main className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
@@ -105,7 +105,7 @@ export const Projects = () => {
               <footer className="max-w-md w-full flex flex-col justify-between gap-8">
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map(tag => (
-                    <Badge key={tag} variant="mono" className="text-[10px] bg-white/5 border-white/10">{tag}</Badge>
+                    <Badge key={tag} size="xs" isMono color="inactive">{tag}</Badge>
                   ))}
                 </div>
                 <div className="pt-6 border-t border-white/5">

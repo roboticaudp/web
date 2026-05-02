@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
 const pingVariants = cva(
   "inline-flex rounded-full h-2 w-2",
@@ -12,15 +12,13 @@ const pingVariants = cva(
         error: "bg-red-500",
         inactive: "bg-white/20",
       }
-    },
-    defaultVariants: {
-      variant: "primary"
     }
   }
 );
 
-export interface StatusPingProps extends VariantProps<typeof pingVariants> {
+export interface StatusPingProps {
   className?: string;
+  variant: "primary" | "success" | "warning" | "error" | "inactive";
 }
 
 export const StatusPing = ({ variant, className }: StatusPingProps) => {

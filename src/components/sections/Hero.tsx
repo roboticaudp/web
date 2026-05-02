@@ -39,7 +39,7 @@ export const Hero = () => {
       <BackgroundHero />
 
       <div className="w-full max-w-4xl px-4 text-center relative z-10">
-        <Badge className="animate-item mb-8" variant="default">
+        <Badge className="animate-item mb-8" color="primary">
           <StatusPing variant="primary" className="mr-2" />
           Comunidad activa {new Date().getFullYear()}
         </Badge>

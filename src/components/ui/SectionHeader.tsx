@@ -9,12 +9,12 @@ interface SectionHeaderProps {
   align?: "left" | "center";
 }
 
-export const SectionHeader = ({ 
-  title, 
-  highlight, 
-  subtitle, 
-  className, 
-  align = "left" 
+export const SectionHeader = ({
+  title,
+  highlight,
+  subtitle,
+  className,
+  align = "left"
 }: SectionHeaderProps) => {
   return (
     <header className={cn(
@@ -26,8 +26,9 @@ export const SectionHeader = ({
         {title} {highlight && <span className="text-primary">{highlight}</span>}
       </Typography>
       {subtitle && (
-        <Typography 
-          as="p" 
+        <Typography
+          as="p"
+          emphasis="medium"
           className={cn(
             "mt-4",
             align === "center" && "mx-auto"

@@ -42,46 +42,44 @@ const DOCUMENTS = [
 
 export const Docs = () => {
   return (
-    <section id="docs" className="py-24 px-6 bg-background relative border-t border-white/5">
-      <article className="max-w-7xl mx-auto">
-        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <SectionHeader
-            title="Documentación"
-            highlight="Técnica."
-            subtitle="Base de conocimiento técnico."
-            className="mb-0"
-          />
-          <Link href="#docs">
-            Ver todos los documentos
-          </Link>
-        </header>
+    <section id="docs" className="h-screen px-4 md:px-6 bg-background relative">
+      <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <SectionHeader
+          title="Documentación"
+          highlight="Técnica."
+          subtitle="Base de conocimiento técnico."
+          className="mb-0"
+        />
+        <Link href="#docs">
+          Ver todos los documentos
+        </Link>
+      </header>
 
-        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {DOCUMENTS.map((doc) => (
-            <article
-              key={doc.id}
-              className="group p-6 border border-white/5 bg-white/[0.02] rounded-2xl hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300 flex flex-col justify-between min-h-[200px]"
-            >
-              <header className="flex justify-between items-start mb-6">
-                <figure className="p-2 bg-white/5 rounded-lg border border-white/5 group-hover:bg-primary/10 transition-colors">
-                  <doc.icon className="w-4 h-4 text-white/40 group-hover:text-primary transition-colors" />
-                </figure>
-                <span className="text-[9px] font-mono text-white/20 tracking-tighter uppercase">{doc.version}</span>
-              </header>
+      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {DOCUMENTS.map((doc) => (
+          <article
+            key={doc.id}
+            className="group p-6 border border-white/5 bg-white/[0.02] rounded-2xl hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300 flex flex-col justify-between min-h-[200px]"
+          >
+            <header className="flex justify-between items-start mb-6">
+              <figure className="p-2 bg-white/5 rounded-lg border border-white/5 group-hover:bg-primary/10 transition-colors">
+                <doc.icon className="w-4 h-4 text-white/40 group-hover:text-primary transition-colors" />
+              </figure>
+              <span className="text-[9px] font-mono text-white/20 tracking-tighter uppercase">{doc.version}</span>
+            </header>
 
-              <main>
-                <Typography as="h4" className="text-base font-bold mb-1">{doc.title}</Typography>
-                <Typography as="p" className="text-xs text-white/30 leading-relaxed">{doc.description}</Typography>
-              </main>
+            <main>
+              <Typography as="h4" className="text-base font-bold mb-1">{doc.title}</Typography>
+              <Typography as="p" className="text-xs text-white/30 leading-relaxed">{doc.description}</Typography>
+            </main>
 
-              <footer className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center text-[9px] font-mono text-white/20">
-                <span className="group-hover:text-white/40 transition-colors">FORMAT: {doc.format}</span>
-                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </footer>
-            </article>
-          ))}
-        </main>
-      </article>
+            <footer className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center text-[9px] font-mono text-white/20">
+              <span className="group-hover:text-white/40 transition-colors">FORMAT: {doc.format}</span>
+              <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </footer>
+          </article>
+        ))}
+      </main>
     </section>
   );
 };

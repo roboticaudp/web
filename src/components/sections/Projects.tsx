@@ -63,11 +63,11 @@ export const Projects = () => {
   }, [headerHeight]);
 
   return (
-    <section id="proyectos" ref={sectionRef} className="bg-background relative z-10 border-t border-white/5">
+    <section id="proyectos" ref={sectionRef} className="bg-background relative z-10">
       {sortedProjects.map((project, index) => (
         <article
           key={index}
-          className={`project-row border-b border-white/5 min-h-screen ${index === 0 ? "pt-15" : ""} flex flex-col overflow-hidden`}
+          className={`project-row min-h-screen ${index === 0 ? "pt-15" : ""} flex flex-col overflow-hidden`}
         >
           {index !== 0 && (
             <div

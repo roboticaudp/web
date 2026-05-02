@@ -44,7 +44,7 @@ export const Hero = () => {
           Comunidad activa {new Date().getFullYear()}
         </Badge>
 
-        <Typography as="h1" className="animate-item mb-6">
+        <Typography as="h1" className="animate-item mb-10">
           Ingeniería que <br />
           <TextRotator
             words={HERO_WORDS}
@@ -52,7 +52,7 @@ export const Hero = () => {
           />
         </Typography>
 
-        <Typography as="p" className="animate-item mb-10 max-w-2xl mx-auto leading-relaxed">
+        <Typography as="p" emphasis="medium" className="animate-item max-w-2xl mx-auto">
           Hub tecnológico de la <UDPBadge />. Desarrollamos el futuro de la robótica, un prototipo a la vez.
         </Typography>
       </div>

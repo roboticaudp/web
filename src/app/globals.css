@@ -3,15 +3,17 @@
 @theme inline {
   --color-background: #0A0A0A;
   --color-foreground: #FFFFFF;
-  
+
   --color-primary: #D32F2F;
   --color-primary-foreground: #FFFFFF;
-  
+
   --color-surface: #1A1A1A;
   --color-muted: #FAFAFA;
-  
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-mono);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-geist: var(--font-geist);
+  --font-clash: var(--font-clash);
 
   --animate-red-pulse: red-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-spin-slow: spin 8s linear infinite;
@@ -19,14 +21,24 @@
 }
 
 @keyframes red-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
 }
 
 @layer utilities {
   .bg-red-linear-gradient {
     background-image: linear-gradient(to right, var(--color-primary), #9a1b1b);
   }
+
   .bg-red-glow-conic {
     background-image: conic-gradient(from 180deg at 50% 50%, var(--color-primary) 0deg, transparent 60deg, transparent 300deg, var(--color-primary) 360deg);
   }
@@ -48,7 +60,8 @@ body {
 }
 
 /* Hide scrollbar for smooth scroll */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
   width: 100vw;
 }
@@ -75,6 +88,8 @@ html.lenis, html.lenis body {
 }
 
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

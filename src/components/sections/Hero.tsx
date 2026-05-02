@@ -4,15 +4,12 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Badge } from "@/components/ui/Badge";
 import { Typography } from "@/components/ui/Typography";
-import { Link } from "@/components/ui/Link";
-import { WhatsApp } from "@/components/icons/WhatsApp";
 import { StatusPing } from "@/components/ui/StatusPing";
 import { TextRotator } from "@/components/ui/TextRotator";
-import { UDPBadge } from "@/components/ui/UDPBadge";
+import { UDPLogo } from "@/components/icons/UDPLogo";
 import { BackgroundHero } from "@/components/ui/BackgroundHero";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 
-const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/F3psnWghJzqGknAL1KHnrY";
 const HERO_WORDS = ["cobra vida.", "se transforma.", "se acelera.", "evoluciona."];
 
 export const Hero = () => {
@@ -53,7 +50,7 @@ export const Hero = () => {
         </Typography>
 
         <Typography as="p" emphasis="medium" className="animate-item max-w-2xl mx-auto">
-          Hub tecnológico de la <UDPBadge />. Desarrollamos el futuro de la robótica, un prototipo a la vez.
+          Hub tecnológico de la <Badge color="inactive" size="xs"> <UDPLogo className="w-5 h-5 mr-1" /> Universidad Diego Portales</Badge>. Desarrollamos el futuro de la robótica, un prototipo a la vez.
         </Typography>
       </div>
 

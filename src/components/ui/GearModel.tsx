@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler.js";
@@ -7,6 +6,10 @@ import { vertexShader, fragmentShader, createGear } from "@/shaders/gear";
 
 export default function GearModel({ className }: { className?: string }) {
     const mountRef = useRef<HTMLDivElement>(null);
+    const mouse = useRef(new THREE.Vector2(0, 0));
+    const targetMouse = useRef(new THREE.Vector2(0, 0));
+    const mouseWorld = useRef(new THREE.Vector3(0, 0, 0));
+    const raycaster = useRef(new THREE.Raycaster());
 
     const SETTINGS = {
         position: { x: 2.5, y: 0, z: 0 },
@@ -30,6 +33,8 @@ export default function GearModel({ className }: { className?: string }) {
             spread: 0.05,
             cycleDuration: 4,
             pauseDuration: 2,
+            repulsionRadius: 1.25,
+            repulsionStrength: 0.8,
             material: {
                 transparent: true,
                 depthWrite: false,
@@ -40,7 +45,10 @@ export default function GearModel({ className }: { className?: string }) {
                     uOpacity: { value: 0.8 },
                     uFloatSpeed: { value: 1.0 },
                     uFloatAmplitude: { value: 0.5 },
-                    uVibrationFactor: { value: 0 }
+                    uVibrationFactor: { value: 0 },
+                    uMouse: { value: new THREE.Vector3(0, 0, 0) },
+                    uRepulsionRadius: { value: 1.25 },
+                    uRepulsionStrength: { value: 0.8 }
                 },
                 vertexShader: vertexShader,
                 fragmentShader: fragmentShader
@@ -50,6 +58,7 @@ export default function GearModel({ className }: { className?: string }) {
             speed: 0.5,
             stepAngle: Math.PI / 6,
             smoothness: 0.1,
+            mouseLerp: 0.1
         },
         renderer: {
             antialias: true,
@@ -70,9 +79,7 @@ export default function GearModel({ className }: { className?: string }) {
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         mountRef.current.appendChild(renderer.domElement);
 
-        // GEOMETRY
         const gearGeo = createGear(SETTINGS.gear);
-
         const sampler = new MeshSurfaceSampler(new THREE.Mesh(gearGeo)).build();
 
         const posArray = new Float32Array(SETTINGS.particles.count * 3);
@@ -96,7 +103,6 @@ export default function GearModel({ className }: { className?: string }) {
         const particlesMaterial = new THREE.ShaderMaterial(SETTINGS.particles.material);
         const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 
-        // WIREFRAME
         const wireMaterial = new THREE.MeshBasicMaterial(SETTINGS.gear.material);
         const gearMesh = new THREE.Mesh(gearGeo, wireMaterial);
 
@@ -107,16 +113,35 @@ export default function GearModel({ className }: { className?: string }) {
         gearGroup.rotation.y = SETTINGS.rotation.y;
         scene.add(gearGroup);
 
+        const mousePlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+
+        const handleMouseMove = (event: MouseEvent) => {
+            targetMouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+            targetMouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        };
+
         // ANIMATION
         let startTime = performance.now();
         function animate() {
             requestAnimationFrame(animate);
             const elapsed = (performance.now() - startTime) / 1000;
 
+            mouse.current.lerp(targetMouse.current, SETTINGS.animation.mouseLerp);
+
+            // 1. Calcular rotación del engranaje
             const step = Math.floor(elapsed * SETTINGS.animation.speed);
             const targetRotation = step * SETTINGS.animation.stepAngle;
             gearGroup.rotation.z += (targetRotation - gearGroup.rotation.z) * SETTINGS.animation.smoothness;
+            gearGroup.rotation.x = mouse.current.y * 0.15;
+            gearGroup.rotation.y = SETTINGS.rotation.y + mouse.current.x * 0.15;
 
+            // 2. Raycasting y transformación a Espacio Local
+            raycaster.current.setFromCamera(mouse.current, camera);
+            raycaster.current.ray.intersectPlane(mousePlane, mouseWorld.current);
+            const localMouse = mouseWorld.current.clone();
+            gearGroup.worldToLocal(localMouse); // Compensación de rotación mágica
+
+            // 3. Actualizar Uniforms
             const totalCycle = SETTINGS.particles.cycleDuration + SETTINGS.particles.pauseDuration;
             const timeInCycle = elapsed % totalCycle;
             let vFactor = 0;
@@ -126,6 +151,7 @@ export default function GearModel({ className }: { className?: string }) {
 
             particlesMaterial.uniforms.uTime.value = elapsed;
             particlesMaterial.uniforms.uVibrationFactor.value = vFactor;
+            particlesMaterial.uniforms.uMouse.value.copy(localMouse);
 
             renderer.render(scene, camera);
         }
@@ -138,8 +164,11 @@ export default function GearModel({ className }: { className?: string }) {
             renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
         };
 
+        window.addEventListener("mousemove", handleMouseMove);
         window.addEventListener("resize", handleResize);
+
         return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("resize", handleResize);
             renderer.dispose();
             mountRef.current?.removeChild(renderer.domElement);

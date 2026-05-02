@@ -4,11 +4,27 @@ uniform float uSize;
 uniform float uFloatSpeed;
 uniform float uFloatAmplitude;
 uniform float uVibrationFactor;
+uniform vec3 uMouse;
+uniform float uRepulsionRadius;
+uniform float uRepulsionStrength;
 attribute float aRandom;
 varying float vOpacity;
 
 void main() {
     vec3 pos = position;
+    
+    // 1. Efecto de Repulsión
+    float dist = distance(pos, uMouse);
+    if (dist < uRepulsionRadius) {
+        // Calculamos la dirección opuesta al ratón
+        vec3 dir = normalize(pos - uMouse);
+        // La fuerza decae con la distancia
+        float power = 1.0 - (dist / uRepulsionRadius);
+        // Aplicamos el desplazamiento con un poco de aleatoriedad para que no sea perfecto
+        pos += dir * power * uRepulsionStrength * (aRandom * 0.1 + 0.9);
+    }
+
+    // 2. Movimiento orgánico base (flotación)
     float time = uTime * uFloatSpeed + aRandom;
     float offset = sin(time) * uFloatAmplitude * uVibrationFactor;
     
@@ -22,3 +38,4 @@ void main() {
     vOpacity = 1.0;
 }
 `;
+export default vertexShader;

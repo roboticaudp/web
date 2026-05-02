@@ -43,13 +43,15 @@ const DOCUMENTS = [
 export const Docs = () => {
   return (
     <section id="docs" className="h-screen px-4 md:px-6 bg-background relative">
-      <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <SectionHeader
-          title="Documentación"
-          highlight="Técnica."
-          subtitle="Base de conocimiento técnico."
-          className="mb-0"
-        />
+      <header className="flex flex-row justify-between items-end">
+        <div className="flex flex-col">
+          <Typography as="h2">
+            Documentación <span className="text-primary">Técnica.</span>
+          </Typography>
+          <Typography as="p" emphasis="medium">
+            Base de conocimiento técnico.
+          </Typography>
+        </div>
         <Link href="#docs">
           Ver todos los documentos
         </Link>

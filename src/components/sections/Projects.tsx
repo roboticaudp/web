@@ -7,43 +7,11 @@ import { Badge } from "@/components/ui/Badge";
 import { Typography } from "@/components/ui/Typography";
 import { StatusPing } from "@/components/ui/StatusPing";
 import { ParticipantStack } from "@/components/ui/ParticipantStack";
+import { projects } from "content";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    title: "Dron Autónomo V2",
-    description: "Desarrollo de un cuadricóptero avanzado equipado con visión computacional de última generación para navegación autónoma y evasión de obstáculos en tiempo real. Optimizado para entornos industriales complejos.",
-    tags: ["ROS", "Python", "OpenCV", "NVIDIA Jetson"],
-    status: "success",
-    statusLabel: "En Marcha",
-    participants: 12,
-  },
-  {
-    title: "Brazo Robótico UDP",
-    description: "Manipulador industrial de alta precisión con 6 grados de libertad. Diseñado para tareas de ensamblaje minucioso y experimentación en laboratorios de robótica avanzada.",
-    tags: ["C++", "Arduino", "MoveIt", "3D Printing"],
-    status: "primary",
-    statusLabel: "Desarrollo",
-    participants: 8,
-  },
-  {
-    title: "Red de Sensores IoT",
-    description: "Infraestructura de monitoreo ambiental distribuida por todo el campus. Recolecta datos críticos de calidad de aire, ruido y luz utilizando protocolos de bajo consumo.",
-    tags: ["ESP32", "MQTT", "Grafana", "Node.js"],
-    status: "warning",
-    statusLabel: "Atención",
-    participants: 4,
-  },
-  {
-    title: "Micro-Rover Explorador",
-    description: "Vehículo autónomo de exploración todoterreno. Integra LiDAR y sensores ultrasónicos para mapeo 3D de superficies irregulares y recolección de muestras.",
-    tags: ["ROS 2", "LiDAR", "Path Planning", "C++"],
-    status: "inactive",
-    statusLabel: "Inactivo",
-    participants: 15,
-  },
-];
+const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
 export const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -96,7 +64,7 @@ export const Projects = () => {
 
   return (
     <section id="proyectos" ref={sectionRef} className="bg-background relative z-10 border-t border-white/5">
-      {projects.map((project, index) => (
+      {sortedProjects.map((project, index) => (
         <article
           key={index}
           className={`project-row border-b border-white/5 min-h-screen ${index === 0 ? "pt-15" : ""} flex flex-col overflow-hidden`}

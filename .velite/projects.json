@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Brazo Robótico UDP",
+    "slug": "brazo-robotico",
+    "description": "Manipulador industrial de alta precisión con 6 grados de libertad. Diseñado para tareas de ensamblaje minucioso y experimentación en laboratorios de robótica avanzada.",
+    "tags": [
+      "C++",
+      "Arduino",
+      "MoveIt",
+      "3D Printing"
+    ],
+    "status": "primary",
+    "statusLabel": "Desarrollo",
+    "participants": 8,
+    "order": 2,
+    "content": "const{jsx:t}=arguments[0];function _createMdxContent(e){const n={p:\"p\",...e.components};return t(n.p,{children:\"Utilizamos la librería MoveIt para la planificación de trayectorias cinemáticas y ROS para el control distribuido del hardware.\"})}return{default:function(e={}){const{wrapper:n}=e.components||{};return n?t(n,{...e,children:t(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "permalink": "/projects/brazo-robotico"
+  },
+  {
+    "title": "Dron Autónomo V2",
+    "slug": "dron-autonomo",
+    "description": "Desarrollo de un cuadricóptero avanzado equipado con visión computacional de última generación para navegación autónoma y evasión de obstáculos en tiempo real. Optimizado para entornos industriales complejos.",
+    "tags": [
+      "ROS",
+      "Python",
+      "OpenCV",
+      "NVIDIA Jetson"
+    ],
+    "status": "success",
+    "statusLabel": "En Marcha",
+    "participants": 12,
+    "order": 1,
+    "content": "const{jsx:n}=arguments[0];function _createMdxContent(e){const t={p:\"p\",...e.components};return n(t.p,{children:\"Este proyecto se enfoca en la implementación de algoritmos de SLAM (Simultaneous Localization and Mapping) utilizando sensores LiDAR y cámaras de profundidad.\"})}return{default:function(e={}){const{wrapper:t}=e.components||{};return t?n(t,{...e,children:n(_createMdxContent,{...e})}):_createMdxContent(e)}};",
+    "permalink": "/projects/dron-autonomo"
+  },
+  {
+    "title": "Micro-Rover Explorador",
+    "slug": "micro-rover",
+    "description": "Vehículo autónomo de exploración todoterreno. Integra LiDAR y sensores ultrasónicos para mapeo 3D de superficies irregulares y recolección de muestras.",
+    "tags": [
+      "ROS 2",
+      "LiDAR",
+      "Path Planning",
+      "C++"
+    ],
+    "status": "inactive",
+    "statusLabel": "Inactivo",
+    "participants": 15,
+    "order": 4,
+    "content": "const{jsx:e}=arguments[0];function _createMdxContent(n){const t={p:\"p\",...n.components};return e(t.p,{children:\"El Rover está diseñado para operar en terrenos difíciles, utilizando un sistema de suspensión tipo rocker-bogie.\"})}return{default:function(n={}){const{wrapper:t}=n.components||{};return t?e(t,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};",
+    "permalink": "/projects/micro-rover"
+  },
+  {
+    "title": "Red de Sensores IoT",
+    "slug": "red-sensores-iot",
+    "description": "Infraestructura de monitoreo ambiental distribuida por todo el campus. Recolecta datos críticos de calidad de aire, ruido y luz utilizando protocolos de bajo consumo.",
+    "tags": [
+      "ESP32",
+      "MQTT",
+      "Grafana",
+      "Node.js"
+    ],
+    "status": "warning",
+    "statusLabel": "Atención",
+    "participants": 4,
+    "order": 3,
+    "content": "const{jsx:n}=arguments[0];function _createMdxContent(t){const e={p:\"p\",...t.components};return n(e.p,{children:\"La red utiliza el protocolo MQTT para la transmisión de datos hacia un servidor centralizado con InfluxDB y Grafana.\"})}return{default:function(t={}){const{wrapper:e}=t.components||{};return e?n(e,{...t,children:n(_createMdxContent,{...t})}):_createMdxContent(t)}};",
+    "permalink": "/projects/red-sensores-iot"
+  }
+]

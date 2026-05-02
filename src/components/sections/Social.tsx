@@ -41,8 +41,8 @@ export const Social = () => {
                   className="w-12 h-12 transition-all shrink-0"
                 />
                 <header className="flex-1 min-w-0">
-                  <Typography variant="h4" className="text-sm font-bold truncate">{member.name}</Typography>
-                  <Typography variant="p" className="text-[10px] text-white/30 uppercase tracking-wider">{member.role}</Typography>
+                  <Typography as="h4" className="text-sm font-bold truncate">{member.name}</Typography>
+                  <Typography as="p" className="text-[10px] text-white/30 uppercase tracking-wider">{member.role}</Typography>
                 </header>
                 <Link href={member.linkedin} target="_blank" className="p-2 text-white/20 hover:text-[#0a66c2] transition-colors">
                   <LinkedIn className="w-4 h-4" />
@@ -60,8 +60,8 @@ export const Social = () => {
               <nav className="flex items-center gap-4">
                 <FaInstagram className="w-5 h-5 text-primary" />
                 <header>
-                  <Typography variant="h4" className="text-sm font-bold">@robotica.udp</Typography>
-                  <Typography variant="p" className="text-xs text-white/30">Síguenos en Instagram</Typography>
+                  <Typography as="h4" className="text-sm font-bold">@robotica.udp</Typography>
+                  <Typography as="p" className="text-xs text-white/30">Síguenos en Instagram</Typography>
                 </header>
               </nav>
               <ArrowUpRight className="w-4 h-4 text-white/10 group-hover:text-primary transition-colors" />
@@ -75,8 +75,8 @@ export const Social = () => {
               <nav className="flex items-center gap-4">
                 <FaGithub className="w-5 h-5 text-white" />
                 <header>
-                  <Typography variant="h4" className="text-sm font-bold">Robótica UDP</Typography>
-                  <Typography variant="p" className="text-xs text-white/30">Repositorio Open Source</Typography>
+                  <Typography as="h4" className="text-sm font-bold">Robótica UDP</Typography>
+                  <Typography as="p" className="text-xs text-white/30">Repositorio Open Source</Typography>
                 </header>
               </nav>
               <ArrowUpRight className="w-4 h-4 text-white/10 group-hover:text-white transition-colors" />

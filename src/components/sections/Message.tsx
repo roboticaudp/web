@@ -70,7 +70,7 @@ export const Message = () => {
     >
       <div ref={containerRef} className="text-center w-full px-6">
         <Typography
-          variant="h2"
+          as="h2"
           className="text-4xl md:text-9xl font-black uppercase pb-10 flex flex-wrap"
         >
           {words.map((word, i) => (
@@ -80,7 +80,7 @@ export const Message = () => {
           ))}
         </Typography>
         <Typography
-          variant="p"
+          as="p"
           className="signature mt-8 text-white/40 text-base md:text-xl font-light italic text-end"
         >
           - Programación ATS

@@ -28,7 +28,7 @@ export const ParticipantStack = ({ count, className }: ParticipantStackProps) =>
         )}
       </div>
 
-      <Typography variant="p" className="text-xs text-white/40">
+      <Typography as="p" className="text-xs text-white/40">
         {count} Participantes
       </Typography>
     </div>

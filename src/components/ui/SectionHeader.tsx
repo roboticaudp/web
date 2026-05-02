@@ -22,12 +22,12 @@ export const SectionHeader = ({
       align === "center" && "text-center mx-auto",
       className
     )}>
-      <Typography variant="h2">
+      <Typography as="h2">
         {title} {highlight && <span className="text-primary">{highlight}</span>}
       </Typography>
       {subtitle && (
         <Typography 
-          variant="p" 
+          as="p" 
           className={cn(
             "mt-4",
             align === "center" && "mx-auto"

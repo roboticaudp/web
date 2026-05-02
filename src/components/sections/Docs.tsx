@@ -70,8 +70,8 @@ export const Docs = () => {
               </header>
 
               <main>
-                <Typography variant="h4" className="text-base font-bold mb-1">{doc.title}</Typography>
-                <Typography variant="p" className="text-xs text-white/30 leading-relaxed">{doc.description}</Typography>
+                <Typography as="h4" className="text-base font-bold mb-1">{doc.title}</Typography>
+                <Typography as="p" className="text-xs text-white/30 leading-relaxed">{doc.description}</Typography>
               </main>
 
               <footer className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center text-[9px] font-mono text-white/20">

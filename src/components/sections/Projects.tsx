@@ -117,7 +117,7 @@ export const Projects = () => {
               <div className="flex items-baseline gap-4 md:gap-8">
                 <span className="text-primary font-mono text-xs md:text-sm shrink-0">02.0{index + 1} /</span>
                 <Typography
-                  variant="h2"
+                  as="h2"
                 >
                   {project.title}
                 </Typography>
@@ -130,7 +130,7 @@ export const Projects = () => {
             </header>
 
             <main className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
-              <Typography variant="p" className="text-sm max-w-2xl md:text-base text-white/40 leading-relaxed">
+              <Typography as="p" className="text-sm max-w-2xl md:text-base text-white/40 leading-relaxed">
                 {project.description}
               </Typography>
 

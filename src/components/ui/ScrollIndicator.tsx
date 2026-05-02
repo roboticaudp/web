@@ -27,7 +27,7 @@ export const ScrollIndicator = () => {
       <div ref={iconRef}>
         <Mouse className="text-white/30" />
       </div>
-      <Typography variant="small" className="text-white/20">
+      <Typography as="p" className="text-white/20 text-xs">
         Scroll
       </Typography>
     </div>

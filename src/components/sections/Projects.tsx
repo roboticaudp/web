@@ -98,7 +98,7 @@ export const Projects = () => {
             </header>
 
             <main className="flex flex-col md:flex-row justify-between gap-8 md:gap-20">
-              <Typography as="p" className="text-sm max-w-2xl md:text-base text-white/40 leading-relaxed">
+              <Typography as="p" emphasis="medium" className="max-w-2xl">
                 {project.description}
               </Typography>
 

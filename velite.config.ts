@@ -18,8 +18,8 @@ export default defineConfig({
         slug: s.slug('projects'),
         description: s.string().max(500),
         tags: s.array(s.string()),
-        status: s.enum(['success', 'primary', 'warning', 'inactive']),
-        statusLabel: s.string(),
+        status: s.enum(['success', 'primary', 'warning', 'error', 'inactive']),
+        statusLabel: s.enum(['Finalizado', 'En Desarrollo', 'Inactivo']),
         participants: s.number().default(0),
         order: s.number().default(0),
         content: s.mdx()

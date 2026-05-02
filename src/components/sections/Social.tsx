@@ -2,7 +2,6 @@
 
 import { FaInstagram, FaGithub } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 import { Avatar } from "@/components/ui/Avatar";
@@ -19,14 +18,16 @@ const BOARD_MEMBERS = [
 
 export const Social = () => {
   return (
-    <section id="comunidad" className="py-20 px-6 bg-background border-t border-white/5">
-      <article className="max-w-7xl mx-auto">
-        <SectionHeader
-          title="Directiva"
-          highlight="& Redes."
-          subtitle="Conecta con el equipo y sigue nuestra actividad."
-          className="mb-12"
-        />
+    <section id="comunidad" className="py-20 px-6 bg-background">
+      <article>
+        <header>
+          <Typography as="h2">
+            Directiva  <span className="text-primary">Redes.</span>
+          </Typography>
+          <Typography as="p" emphasis="medium">
+            Conecta con el equipo y sigue nuestra actividad.
+          </Typography>
+        </header>
 
         <main className="space-y-8">
           <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

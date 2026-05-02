@@ -35,7 +35,7 @@ export const Message = () => {
           y: 20,
         },
         {
-          opacity: 1,
+          opacity: 0.87,
           y: 0,
           stagger: 0.5,
           duration: 1,
@@ -51,7 +51,7 @@ export const Message = () => {
           x: 20,
         },
         {
-          opacity: 1,
+          opacity: 0.6,
           x: 0,
           duration: 1,
           ease: "power2.out",
@@ -71,7 +71,7 @@ export const Message = () => {
       <div ref={containerRef} className="text-center w-full px-6">
         <Typography
           as="h2"
-          className="text-4xl md:text-9xl font-black uppercase pb-10 flex flex-wrap"
+          className="text-4xl md:text-9xl flex flex-wrap"
         >
           {words.map((word, i) => (
             <span key={i} className="word inline-block mr-[0.3em]">
@@ -81,7 +81,8 @@ export const Message = () => {
         </Typography>
         <Typography
           as="p"
-          className="signature mt-8 text-white/40 text-base md:text-xl font-light italic text-end"
+          emphasis="medium"
+          className="signature font-light italic text-end mt-28"
         >
           - Programación ATS
         </Typography>

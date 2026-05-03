@@ -121,17 +121,24 @@ export default function GearModel({ className }: { className?: string }) {
         };
 
         // ANIMATION
-        let startTime = performance.now();
+        const clock = new THREE.Clock();
+        let accumulatedTime = 0;
+
         function animate() {
             requestAnimationFrame(animate);
-            const elapsed = (performance.now() - startTime) / 1000;
+
+            let delta = clock.getDelta();
+            if (delta > 0.1) delta = 0;
+            accumulatedTime += delta;
 
             mouse.current.lerp(targetMouse.current, SETTINGS.animation.mouseLerp);
 
             // 1. Calcular rotación del engranaje
-            const step = Math.floor(elapsed * SETTINGS.animation.speed);
+            const step = Math.floor(accumulatedTime * SETTINGS.animation.speed);
             const targetRotation = step * SETTINGS.animation.stepAngle;
+
             gearGroup.rotation.z += (targetRotation - gearGroup.rotation.z) * SETTINGS.animation.smoothness;
+
             gearGroup.rotation.x = mouse.current.y * 0.15;
             gearGroup.rotation.y = SETTINGS.rotation.y + mouse.current.x * 0.15;
 
@@ -139,17 +146,17 @@ export default function GearModel({ className }: { className?: string }) {
             raycaster.current.setFromCamera(mouse.current, camera);
             raycaster.current.ray.intersectPlane(mousePlane, mouseWorld.current);
             const localMouse = mouseWorld.current.clone();
-            gearGroup.worldToLocal(localMouse); // Compensación de rotación mágica
+            gearGroup.worldToLocal(localMouse);
 
             // 3. Actualizar Uniforms
             const totalCycle = SETTINGS.particles.cycleDuration + SETTINGS.particles.pauseDuration;
-            const timeInCycle = elapsed % totalCycle;
+            const timeInCycle = accumulatedTime % totalCycle;
             let vFactor = 0;
             if (timeInCycle < SETTINGS.particles.cycleDuration) {
                 vFactor = Math.sin((Math.PI * timeInCycle) / SETTINGS.particles.cycleDuration);
             }
 
-            particlesMaterial.uniforms.uTime.value = elapsed;
+            particlesMaterial.uniforms.uTime.value = accumulatedTime;
             particlesMaterial.uniforms.uVibrationFactor.value = vFactor;
             particlesMaterial.uniforms.uMouse.value.copy(localMouse);
 
@@ -170,8 +177,16 @@ export default function GearModel({ className }: { className?: string }) {
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("resize", handleResize);
+
+            gearGeo.dispose();
+            particlesGeometry.dispose();
+            particlesMaterial.dispose();
+            wireMaterial.dispose();
             renderer.dispose();
-            mountRef.current?.removeChild(renderer.domElement);
+
+            if (mountRef.current && renderer.domElement) {
+                mountRef.current.removeChild(renderer.domElement);
+            }
         };
     }, []);
 

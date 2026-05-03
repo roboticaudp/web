@@ -121,13 +121,14 @@ export default function GearModel({ className }: { className?: string }) {
         };
 
         // ANIMATION
-        const clock = new THREE.Clock();
+        const timer = new THREE.Timer();
         let accumulatedTime = 0;
 
         function animate() {
             requestAnimationFrame(animate);
 
-            let delta = clock.getDelta();
+            timer.update();
+            let delta = timer.getDelta();
             if (delta > 0.1) delta = 0;
             accumulatedTime += delta;
 

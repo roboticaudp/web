@@ -65,7 +65,10 @@ export const TextRotator = ({
         <span
           key={i}
           ref={(el) => { wordRefs.current[i] = el; }}
-          className="absolute left-0 top-0 whitespace-nowrap"
+          className={cn(
+            "absolute left-0 top-0 whitespace-nowrap",
+            i !== 0 && "opacity-0 hidden"
+          )}
         >
           {word}
         </span>

@@ -68,7 +68,10 @@ export const Message = () => {
       ref={sectionRef}
       className="relative h-[350vh] flex items-start justify-center bg-background overflow-hidden pt-[20vh]"
     >
-      <div ref={containerRef} className="text-center w-full px-6">
+      <div
+        ref={containerRef}
+        className="text-center w-full px-6 pt-[10vh]"
+      >
         <Typography
           as="h2"
           className="text-4xl md:text-9xl flex flex-wrap"

@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowUpRight, FileText, Code2, Database, Cpu } from "lucide-react";
-// import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 
@@ -43,25 +42,21 @@ const DOCUMENTS = [
 export const Docs = () => {
   return (
     <section id="docs" className="h-screen px-4 md:px-6 bg-background relative">
-      <header className="flex flex-row justify-between items-end">
-        <div className="flex flex-col">
-          <Typography as="h2">
-            Documentación <span className="text-primary">Técnica.</span>
-          </Typography>
-          <Typography as="p" emphasis="medium">
-            Base de conocimiento técnico.
-          </Typography>
-        </div>
-        <Link href="#docs">
-          Ver todos los documentos
-        </Link>
+      <header className="my-10">
+        <Typography as="h2">
+          Nuestra <span className="text-primary">Biblioteca.</span>
+        </Typography>
+        <Typography as="p" emphasis="medium">
+          Libros y documentos recomendados por la comunidad para apoyar tus proyectos.
+        </Typography>
       </header>
 
-      <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {DOCUMENTS.map((doc) => (
+      <main className="grid grid-cols-1 md:grid-cols-8 md:grid-rows-3 gap-4">
+        {DOCUMENTS.map((doc, index) => (
           <article
             key={doc.id}
-            className="group p-6 border border-white/5 bg-white/[0.02] rounded-2xl hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300 flex flex-col justify-between min-h-[200px]"
+            className={`group p-6 border border-white/5 bg-white/[0.02] rounded-2xl hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300 flex flex-col justify-between min-h-[200px] ${index === 0 ? "md:col-span-8 md:row-span-2" : "md:col-span-2"
+              }`}
           >
             <header className="flex justify-between items-start mb-6">
               <figure className="p-2 bg-white/5 rounded-lg border border-white/5 group-hover:bg-primary/10 transition-colors">
@@ -71,8 +66,8 @@ export const Docs = () => {
             </header>
 
             <main>
-              <Typography as="h4" className="text-base font-bold mb-1">{doc.title}</Typography>
-              <Typography as="p" className="text-xs text-white/30 leading-relaxed">{doc.description}</Typography>
+              <Typography as="h4" className={`${index === 0 ? "text-xl" : "text-base"} font-bold mb-1`}>{doc.title}</Typography>
+              <Typography as="p" className={`${index === 0 ? "text-sm" : "text-xs"} text-white/30 leading-relaxed`}>{doc.description}</Typography>
             </main>
 
             <footer className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center text-[9px] font-mono text-white/20">

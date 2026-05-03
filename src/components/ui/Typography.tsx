@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 const typographyVariants = cva("transition-colors", {
   variants: {
     as: {
-      h1: "font-clash font-bold uppercase text-6xl md:text-8xl leading-tight",
-      h2: "font-clash font-semibold uppercase text-4xl md:text-5xl leading-tight",
-      h3: "font-clash font-medium uppercase text-2xl leading-tight",
-      h4: "font-clash font-medium uppercase text-xl leading-tight",
+      h1: "font-clash font-bold uppercase text-6xl md:text-8xl leading-tight tracking-tighter",
+      h2: "font-clash font-semibold uppercase text-4xl md:text-5xl leading-tight tracking-tighter",
+      h3: "font-clash font-medium uppercase text-2xl leading-tight tracking-tighter",
+      h4: "font-clash font-medium uppercase text-xl leading-tight tracking-tighter",
       p: "font-geist text-lg leading-relaxed",
     },
     color: {

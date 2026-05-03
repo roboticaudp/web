@@ -34,6 +34,6 @@ jobs:
         with:
           path: ./out
 
-      -name: Deploy to Github Pages
+      - name: Deploy to Github Pages
         id: deplyment
         uses: actions/deploy-pages@v4

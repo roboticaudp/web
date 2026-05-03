@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight, FileText, Code2, Database, Cpu } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+// import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 

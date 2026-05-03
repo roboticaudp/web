@@ -70,7 +70,7 @@ export const Message = () => {
     >
       <div
         ref={containerRef}
-        className="text-center w-full px-6 pt-[10vh]"
+        className="text-center w-full px-6 pt-[15vh]"
       >
         <Typography
           as="h2"

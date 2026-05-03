@@ -1,9 +1,10 @@
 import { Logo } from "@/components/icons/Logo";
+import { Typography } from "@/components/ui/Typography";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#050505] border-t border-white/5 pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="bg-[#050505] pt-16 pb-8 px-6">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <Logo />
 
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted/60 font-mono">
@@ -13,9 +14,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-16 text-center md:text-left text-xs text-muted/40 flex flex-col md:flex-row justify-between items-center">
-        <p>© {new Date().getFullYear()} Robótica UDP. Universidad Diego Portales.</p>
-        <p className="mt-2 md:mt-0">Diseñado con <span className="text-primary">♥</span> en Chile.</p>
+      <div className="flex items-center justify-center text-center mt-16 text-xs text-muted/40">
+        <Typography as="p" emphasis="medium" className="text-sm">Diseñado con ♥ desde Chile para el mundo.</Typography>
       </div>
     </footer>
   );

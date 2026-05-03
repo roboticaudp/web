@@ -12,8 +12,8 @@ export default function GearModel({ className }: { className?: string }) {
     const raycaster = useRef(new THREE.Raycaster());
 
     const SETTINGS = {
-        position: { x: 2.5, y: 0, z: 0 },
-        rotation: { y: -1.2 },
+        position: new THREE.Vector3(2.5, 0, 0),
+        rotation: new THREE.Euler(0, -1.2, 0),
         gear: {
             teeth: 12,
             innerRadius: 0.7,
@@ -22,7 +22,7 @@ export default function GearModel({ className }: { className?: string }) {
             toothHeight: 0.20,
             depth: 0.7,
             material: {
-                color: 0xffffff,
+                color: new THREE.Color(0xD32F2F),
                 wireframe: true,
                 transparent: true,
                 opacity: 0.1,
@@ -41,7 +41,7 @@ export default function GearModel({ className }: { className?: string }) {
                 uniforms: {
                     uTime: { value: 0 },
                     uSize: { value: 10.0 },
-                    uColor: { value: new THREE.Color(0xffffff) },
+                    uColor: { value: new THREE.Color(0xD32F2F) },
                     uOpacity: { value: 0.8 },
                     uFloatSpeed: { value: 1.0 },
                     uFloatAmplitude: { value: 0.5 },

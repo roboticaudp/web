@@ -66,7 +66,7 @@ export const Message = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[350vh] flex items-start justify-center bg-background overflow-hidden pt-[20vh]"
+      className="relative h-[300vh] flex items-start justify-center bg-background overflow-hidden pt-[20vh]"
     >
       <div
         ref={containerRef}

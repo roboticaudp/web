@@ -24,7 +24,7 @@ const SOCIAL_NETWORKS = [
     className: "bg-[#080808]",
   },
   {
-    href: "#",
+    href: "https://chat.whatsapp.com/F3psnWghJzqGknAL1KHnrY",
     icon: FaWhatsapp,
     title: "WhatsApp",
     subtitle: "Comunidad Oficial",

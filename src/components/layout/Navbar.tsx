@@ -9,7 +9,7 @@ export const Navbar = () => {
 
         <nav className="hidden md:flex items-center gap-8">
           <Link href="#proyectos" variant="nav">Proyectos</Link>
-          <Link href="#docs" variant="nav">DocHub</Link>
+          <Link href="#docs" variant="nav">Documentos</Link>
           <Link href="#comunidad" variant="nav">Comunidad</Link>
         </nav>
       </div>

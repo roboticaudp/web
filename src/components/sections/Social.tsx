@@ -20,7 +20,7 @@ export const Social = () => {
   return (
     <section id="comunidad" className="py-20 px-6 bg-background">
       <article>
-        <header>
+        <header className="my-10">
           <Typography as="h2">
             Directiva  <span className="text-primary">Redes.</span>
           </Typography>

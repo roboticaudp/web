@@ -1,6 +1,10 @@
 "use client";
 
-import { ArrowUpRight, FileText, Code2, Database, Cpu } from "lucide-react";
+import { ArrowUpRight } from "@/components/icons/ArrowUpRight";
+import { FileText } from "@/components/icons/FileText";
+import { Code2 } from "@/components/icons/Code2";
+import { Database } from "@/components/icons/Database";
+import { Cpu } from "@/components/icons/Cpu";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Mouse } from "lucide-react";
+import { Mouse } from "@/components/icons/Mouse";
 import { Typography } from "./Typography";
 
 export const ScrollIndicator = () => {

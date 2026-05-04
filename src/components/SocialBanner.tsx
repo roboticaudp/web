@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "@/components/icons/ArrowUpRight";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 import { cn } from "@/lib/utils";

@@ -1,13 +1,15 @@
 "use client";
 
-import { FaInstagram, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { Instagram } from "@/components/icons/Instagram";
+import { GitHub } from "@/components/icons/GitHub";
+import { WhatsApp } from "@/components/icons/WhatsApp";
 import { Typography } from "@/components/ui/Typography";
 import { SocialBanner } from "@/components/SocialBanner";
 
 const SOCIAL_NETWORKS = [
   {
     href: "https://www.instagram.com/robotica.udp/",
-    icon: FaInstagram,
+    icon: Instagram,
     title: "Instagram",
     subtitle: "@robotica.udp",
     gradientClasses: "from-[#D32F2F]/40 via-[#C2185B]/20 to-[#7B1FA2]/40",
@@ -16,7 +18,7 @@ const SOCIAL_NETWORKS = [
   },
   {
     href: "https://github.com/roboticaudp",
-    icon: FaGithub,
+    icon: GitHub,
     title: "GitHub",
     subtitle: "@roboticaudp",
     gradientClasses: "from-white/5 to-transparent",
@@ -25,7 +27,7 @@ const SOCIAL_NETWORKS = [
   },
   {
     href: "https://chat.whatsapp.com/F3psnWghJzqGknAL1KHnrY",
-    icon: FaWhatsapp,
+    icon: WhatsApp,
     title: "WhatsApp",
     subtitle: "Comunidad Oficial",
     gradientClasses: "from-[#25D366]/20 via-[#128C7E]/10 to-transparent",

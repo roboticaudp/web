@@ -7,3 +7,4 @@ export * from "./StatusPing";
 export * from "./TextRotator";
 export * from "./ScrollIndicator";
 export * from "./BackgroundHero";
+export * from "./TextScramble";

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Typography, Link, BackgroundHero } from "@/components/ui";
+import { Typography, Link, TextScramble } from "@/components/ui";
 import { GearModel } from "@/components/models";
 
 export default function NotFound() {
@@ -59,9 +59,11 @@ export default function NotFound() {
 
       <div className="absolute bottom-8 left-8 animate-404 opacity-20 hidden md:block">
         <Typography as="p" className="text-xs font-mono">
-          ERROR_CODE: 0x00000194<br />
-          STATUS: COMPONENT_NOT_FOUND<br />
-          LOCATION: UNKNOWN_SECTOR
+          <TextScramble text="ERROR_CODE: 0x00000194" />
+          <br />
+          <TextScramble text="STATUS: COMPONENT_NOT_FOUND" />
+          <br />
+          <TextScramble text="LOCATION: UNKNOWN_SECTOR" />
         </Typography>
       </div>
     </main>

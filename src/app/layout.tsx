@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 import { geist, clashGrotesk } from "@/app/fonts/fonts";
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es" className="dark" suppressHydrationWarning>
       <body
         className={`${geist.variable} ${clashGrotesk.variable} font-sans bg-background text-foreground antialiased selection:bg-primary selection:text-white`}
         suppressHydrationWarning
@@ -24,6 +25,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           <main className="min-h-screen">{children}</main>
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>

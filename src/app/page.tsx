@@ -3,7 +3,6 @@ import { Message } from "@/components/sections/Message";
 import { Projects } from "@/components/sections/Projects";
 import { Docs } from "@/components/sections/Docs";
 import { Social } from "@/components/sections/Social";
-import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <Projects />
       <Docs />
       <Social />
-      <Footer />
     </div>
   );
 }

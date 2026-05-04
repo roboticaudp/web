@@ -1,8 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "@/components/icons";
-import { Typography } from "@/components/ui/Typography";
-import { Link } from "@/components/ui/Link";
+import { Typography, Link } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import React from "react";
 

@@ -3,10 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Badge } from "@/components/ui/Badge";
-import { Typography } from "@/components/ui/Typography";
-import { StatusPing } from "@/components/ui/StatusPing";
-import { ParticipantStack } from "@/components/ui/ParticipantStack";
+import { Badge, Typography, StatusPing } from "@/components/ui";
+import { ParticipantStack } from "@/components/common";
 import { projects } from "content";
 
 gsap.registerPlugin(ScrollTrigger);

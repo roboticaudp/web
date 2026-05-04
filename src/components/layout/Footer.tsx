@@ -1,6 +1,5 @@
-import { Logo } from "@/components/icons/Logo";
-import { Link } from "@/components/ui/Link";
-import { Typography } from "@/components/ui/Typography";
+import { Logo } from "@/components/icons";
+import { Link, Typography } from "@/components/ui";
 
 export const Footer = () => {
   return (

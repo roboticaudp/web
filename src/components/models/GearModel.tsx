@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { MeshSurfaceSampler } from "three/examples/jsm/math/MeshSurfaceSampler.js";
 import { vertexShader, fragmentShader, createGear } from "@/shaders/gear";
 
-export default function GearModel({ className }: { className?: string }) {
+export function GearModel({ className }: { className?: string }) {
     const mountRef = useRef<HTMLDivElement>(null);
     const mouse = useRef(new THREE.Vector2(0, 0));
     const targetMouse = useRef(new THREE.Vector2(0, 0));

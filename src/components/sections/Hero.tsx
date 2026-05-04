@@ -2,15 +2,16 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Badge } from "@/components/ui/Badge";
-import { Typography } from "@/components/ui/Typography";
-import { StatusPing } from "@/components/ui/StatusPing";
-import { TextRotator } from "@/components/ui/TextRotator";
+import { 
+  Badge, 
+  Typography, 
+  StatusPing, 
+  TextRotator, 
+  BackgroundHero, 
+  ScrollIndicator 
+} from "@/components/ui";
 import { UDPLogo } from "@/components/icons";
-import { BackgroundHero } from "@/components/ui/BackgroundHero";
-import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
-
-import GearModel from "@/components/ui/GearModel";
+import { GearModel } from "@/components/models";
 
 const HERO_WORDS = ["se construyen.", "se vuelven reales.", "se programan.", "cobran forma."];
 

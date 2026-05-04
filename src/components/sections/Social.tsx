@@ -1,8 +1,8 @@
 "use client";
 
 import { Instagram, GitHub, WhatsApp } from "@/components/icons";
-import { Typography } from "@/components/ui/Typography";
-import { SocialBanner } from "@/components/SocialBanner";
+import { Typography } from "@/components/ui";
+import { SocialBanner } from "@/components/common";
 
 const SOCIAL_NETWORKS = [
   {

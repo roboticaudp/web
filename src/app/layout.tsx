@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { geist, clashGrotesk } from "@/app/fonts/fonts";
 
 export const metadata: Metadata = {
-  title: "Robótica UDP | Hub de Ingeniería",
+  title: "Robótica UDP",
   description: "Comunidad de robótica de la Universidad Diego Portales. Proyectos, documentación y tecnología.",
 };
 

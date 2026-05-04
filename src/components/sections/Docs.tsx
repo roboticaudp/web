@@ -7,7 +7,7 @@ import {
   Database,
   Cpu
 } from "@/components/icons";
-import { Typography } from "@/components/ui/Typography";
+import { Typography } from "@/components/ui";
 
 const DOCUMENTS = [
   {

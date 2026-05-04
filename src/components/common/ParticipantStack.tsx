@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Typography } from "@/components/ui/Typography";
-import { Avatar } from "@/components/ui/Avatar";
+import { Typography, Avatar } from "@/components/ui";
 
 interface ParticipantStackProps {
   count: number;

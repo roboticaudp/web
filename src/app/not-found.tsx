@@ -2,10 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Typography } from "@/components/ui/Typography";
-import { Link } from "@/components/ui/Link";
-import { BackgroundHero } from "@/components/ui/BackgroundHero";
-import GearModel from "@/components/ui/GearModel";
+import { Typography, Link, BackgroundHero } from "@/components/ui";
+import { GearModel } from "@/components/models";
 
 export default function NotFound() {
   const containerRef = useRef(null);

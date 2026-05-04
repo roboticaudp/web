@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "@/components/icons/ArrowUpRight";
+import { ArrowUpRight } from "@/components/icons";
 import { Typography } from "@/components/ui/Typography";
 import { Link } from "@/components/ui/Link";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,6 @@ interface SocialBannerProps {
   gradientClasses: string; // Ejemplo: "from-[#D32F2F]/40 via-[#C2185B]/20 to-[#7B1FA2]/40"
   glowColor: string;       // Ejemplo: "bg-[#D32F2F]/20"
   className?: string;
-  children?: React.ReactNode; // Para contenido extra como el grid de GitHub
 }
 
 export const SocialBanner = ({
@@ -24,8 +23,7 @@ export const SocialBanner = ({
   subtitle,
   gradientClasses,
   glowColor,
-  className,
-  children
+  className
 }: SocialBannerProps) => {
   return (
     <Link

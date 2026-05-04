@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Typography } from "@/components/ui/Typography";
 import { StatusPing } from "@/components/ui/StatusPing";
 import { TextRotator } from "@/components/ui/TextRotator";
-import { UDPLogo } from "@/components/icons/UDPLogo";
+import { UDPLogo } from "@/components/icons";
 import { BackgroundHero } from "@/components/ui/BackgroundHero";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
 

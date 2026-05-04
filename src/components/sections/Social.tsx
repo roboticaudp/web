@@ -1,8 +1,6 @@
 "use client";
 
-import { Instagram } from "@/components/icons/Instagram";
-import { GitHub } from "@/components/icons/GitHub";
-import { WhatsApp } from "@/components/icons/WhatsApp";
+import { Instagram, GitHub, WhatsApp } from "@/components/icons";
 import { Typography } from "@/components/ui/Typography";
 import { SocialBanner } from "@/components/SocialBanner";
 

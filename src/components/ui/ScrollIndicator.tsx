@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Mouse } from "@/components/icons/Mouse";
-import { Typography } from "./Typography";
+import { Mouse } from "@/components/icons";
+import { Typography } from "@/components/ui/Typography";
 
 export const ScrollIndicator = () => {
   const iconRef = useRef(null);

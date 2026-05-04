@@ -1,12 +1,13 @@
 "use client";
 
-import { ArrowUpRight } from "@/components/icons/ArrowUpRight";
-import { FileText } from "@/components/icons/FileText";
-import { Code2 } from "@/components/icons/Code2";
-import { Database } from "@/components/icons/Database";
-import { Cpu } from "@/components/icons/Cpu";
+import {
+  ArrowUpRight,
+  FileText,
+  Code2,
+  Database,
+  Cpu
+} from "@/components/icons";
 import { Typography } from "@/components/ui/Typography";
-import { Link } from "@/components/ui/Link";
 
 const DOCUMENTS = [
   {

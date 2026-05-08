@@ -15,6 +15,22 @@ export const Projects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+    };
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  const baseOffset = isMobile ? 20 : isTablet ? 40 : 60;
+  const gap = isMobile ? 12 : isTablet ? 24 : 40;
 
   useEffect(() => {
     if (measureRef.current) {
@@ -65,12 +81,15 @@ export const Projects = () => {
       {sortedProjects.map((project, index) => (
         <article
           key={index}
-          className={`project-row min-h-screen ${index === 0 ? "pt-15" : ""} flex flex-col overflow-hidden`}
+          className={`project-row min-h-screen ${index == 0 ? 'lg:pt-15' : ''} flex flex-col overflow-hidden`}
+          style={{ paddingTop: index === 0 ? `${baseOffset}px` : 0 }}
         >
           {index !== 0 && (
             <div
               className="w-full bg-transparent shrink-0"
-              style={{ height: `${60 + (index * (headerHeight + 40))}px` }}
+              style={{
+                height: `${baseOffset + (index * (headerHeight + gap))}px`
+              }}
             />
           )}
           <div

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Typography } from "@/components/ui/Typography";
@@ -13,7 +13,7 @@ export const Message = () => {
   const text = "Si lo puedes imaginar, lo puedes programar.";
   const words = text.split(" ");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!sectionRef.current || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
@@ -27,7 +27,6 @@ export const Message = () => {
         },
       });
 
-      // Animación del mensaje
       tl.fromTo(
         ".word",
         {
@@ -41,10 +40,7 @@ export const Message = () => {
           duration: 1,
           ease: "power2.out",
         }
-      );
-
-      // Animación de la firma
-      tl.fromTo(
+      ).fromTo(
         ".signature",
         {
           opacity: 0,

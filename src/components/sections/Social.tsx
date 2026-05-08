@@ -1,8 +1,10 @@
 "use client";
 
+import { useRef } from "react";
 import { Instagram, GitHub, WhatsApp } from "@/components/icons";
 import { Typography } from "@/components/ui";
 import { SocialBanner } from "@/components/common";
+import { useEntranceAnimation } from "@/hooks/use-entrance-animation";
 
 const SOCIAL_NETWORKS = [
   {
@@ -35,9 +37,12 @@ const SOCIAL_NETWORKS = [
 ];
 
 export const Social = () => {
+  const sectionRef = useRef(null);
+  useEntranceAnimation(sectionRef);
+
   return (
-    <section id="comunidad" className="py-24 px-4 md:px-6 bg-background relative overflow-hidden">
-      <header className="mb-16">
+    <section id="comunidad" ref={sectionRef} className="py-24 px-4 md:px-6 bg-background relative overflow-hidden">
+      <header className="animate-item mb-16">
         <Typography as="h2">
           Nuestra <span className="text-primary">Presencia.</span>
         </Typography>
@@ -48,16 +53,17 @@ export const Social = () => {
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {SOCIAL_NETWORKS.map((network, index) => (
-          <SocialBanner
-            key={index}
-            href={network.href}
-            icon={network.icon}
-            title={network.title}
-            subtitle={network.subtitle}
-            gradientClasses={network.gradientClasses}
-            glowColor={network.glowColor}
-            className={network.className}
-          />
+          <div key={index} className="animate-item">
+            <SocialBanner
+              href={network.href}
+              icon={network.icon}
+              title={network.title}
+              subtitle={network.subtitle}
+              gradientClasses={network.gradientClasses}
+              glowColor={network.glowColor}
+              className={network.className}
+            />
+          </div>
         ))}
       </main>
     </section>

@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { 
-  Badge, 
-  Typography, 
-  StatusPing, 
-  TextRotator, 
-  BackgroundHero, 
-  ScrollIndicator 
+import {
+  Badge,
+  Typography,
+  StatusPing,
+  TextRotator,
+  BackgroundHero,
+  ScrollIndicator
 } from "@/components/ui";
 import { UDPLogo } from "@/components/icons";
 import { GearModel } from "@/components/models";

@@ -122,6 +122,8 @@ export function useGearScene(mountRef: React.RefObject<HTMLDivElement | null>) {
 
         const timer = new THREE.Timer();
         let accumulatedTime = 0;
+        const localMouseVector = new THREE.Vector3();
+        const totalCycle = SETTINGS.particles.cycleDuration + SETTINGS.particles.pauseDuration;
 
         function animate() {
             if (isVisible.current) {
@@ -135,17 +137,21 @@ export function useGearScene(mountRef: React.RefObject<HTMLDivElement | null>) {
                 const step = Math.floor(accumulatedTime * SETTINGS.animation.speed);
                 const targetRotation = step * SETTINGS.animation.stepAngle;
 
-                gearGroup.rotation.z += (targetRotation - gearGroup.rotation.z) * SETTINGS.animation.smoothness;
+                gearGroup.rotation.z = THREE.MathUtils.lerp(
+                    gearGroup.rotation.z,
+                    targetRotation,
+                    SETTINGS.animation.smoothness
+                );
 
                 gearGroup.rotation.x = mouse.current.y * 0.15;
                 gearGroup.rotation.y = SETTINGS.rotation.y + mouse.current.x * 0.15;
 
                 raycaster.current.setFromCamera(mouse.current, camera);
                 raycaster.current.ray.intersectPlane(mousePlane, mouseWorld.current);
-                const localMouse = mouseWorld.current.clone();
-                gearGroup.worldToLocal(localMouse);
+                
+                localMouseVector.copy(mouseWorld.current);
+                gearGroup.worldToLocal(localMouseVector);
 
-                const totalCycle = SETTINGS.particles.cycleDuration + SETTINGS.particles.pauseDuration;
                 const timeInCycle = accumulatedTime % totalCycle;
                 let vibrationFactor = 0;
                 if (timeInCycle < SETTINGS.particles.cycleDuration) {
@@ -154,7 +160,7 @@ export function useGearScene(mountRef: React.RefObject<HTMLDivElement | null>) {
 
                 particlesMaterial.uniforms.uTime.value = accumulatedTime;
                 particlesMaterial.uniforms.uVibrationFactor.value = vibrationFactor;
-                particlesMaterial.uniforms.uMouse.value.copy(localMouse);
+                particlesMaterial.uniforms.uMouse.value.copy(localMouseVector);
 
                 renderer.render(scene, camera);
             }

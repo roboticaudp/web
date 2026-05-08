@@ -35,7 +35,7 @@ const Badge = React.forwardRef<HTMLElement, BadgeProps>(
       <Tag
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-full font-semibold",
+          "inline-flex items-center justify-center rounded-full font-semibold w-fit",
           BADGE_VARIANTS[variant],
           BADGE_COLORS[color],
           BADGE_SIZES[size],

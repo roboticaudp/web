@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react";
 import {
   Badge,
   Typography,
@@ -12,27 +11,13 @@ import {
 } from "@/components/ui";
 import { UDPLogo } from "@/components/icons";
 import { GearModel } from "@/components/models";
+import { useEntranceAnimation } from "@/hooks/use-entrance-animation";
 
 const HERO_WORDS = ["se construyen.", "se vuelven reales.", "se programan.", "cobran forma."];
 
 export const Hero = () => {
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Entrance animation
-      gsap.from(".animate-item", {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "power4.out",
-        delay: 0.3
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  useEntranceAnimation(containerRef);
 
   return (
     <section ref={containerRef} className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
